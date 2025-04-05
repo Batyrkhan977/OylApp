@@ -1,4 +1,4 @@
-package com.example.oyla.ui.gallery;
+package com.example.oyla.ui.game;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,22 +10,22 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.oyla.databinding.FragmentGalleryBinding;
+import com.example.oyla.databinding.FragmentGameBinding;
 
-public class GalleryFragment extends Fragment {
+public class GameFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
+    private FragmentGameBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        GameViewModel gameViewModel =
+                new ViewModelProvider(this).get(GameViewModel.class);
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentGameBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textGallery;
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textGame;
+        gameViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
         return root;
     }
 
